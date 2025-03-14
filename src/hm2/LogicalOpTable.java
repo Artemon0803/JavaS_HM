@@ -1,6 +1,7 @@
 package hm2;
 
 public class LogicalOpTable {
+
     public static void main(String[] args) {
         boolean p, q;
 

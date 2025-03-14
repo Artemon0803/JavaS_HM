@@ -2,6 +2,8 @@ package home_work1;
 
 //Task 1.1 from page 46
 
+import hm2.LogicOpTableV2;
+
 import java.io.IOException;
 import java.util.Scanner;
 
