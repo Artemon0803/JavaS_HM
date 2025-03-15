@@ -15,10 +15,7 @@ public class NumMulti {
             if(number%i==0){
                 counter++;
                 if(counter==1) System.out.printf("%d is a product of:\n", number);
-                int a, b;
-                a=number/i;
-                b=i;
-                System.out.printf("%d and %d\n", a, b);
+                System.out.printf("%d and %d\n", number/i, i);
             }
         }
         if(counter==0) System.out.printf("The number %d has no multipliers, so it is a prime number. A prime number (or a prime) is a natural number greater than 1 that is not a product of two smaller natural numbers.", number);
