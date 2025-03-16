@@ -3,12 +3,15 @@ package hm4;
 import java.util.Random;
 
 public class BankAccount {
+    static int totalUsers = 0;
     private int ACCnumber;
     private float balance;
 
     BankAccount(){
-        ACCnumber =(int) (Math.random()*(548999999-548000000+1)+548000000);
+        if(ACCnumber+totalUsers<549000000) ACCnumber = 548000000+totalUsers;
+        else System.out.println("User limit reached!");
         balance=0.00f;
+        ++totalUsers;
     }
 
     void addMoney(float sum){
