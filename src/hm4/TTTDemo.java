@@ -15,7 +15,7 @@ public class TTTDemo {
             x=scanner.nextInt();
             System.out.print("Enter y position: ");
             y=scanner.nextInt();
-            game.userTurn(x-1, y-1);
+            game.userTurn(x, y);
             game.fieldShow();
         } while(!game.gameOver());
         System.out.println("Game Over!");

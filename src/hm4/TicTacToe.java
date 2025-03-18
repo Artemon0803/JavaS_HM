@@ -18,7 +18,7 @@ public class TicTacToe {
     }
 
     void userTurn(int x, int y){
-        //if(turn==3) turn=1;
+        --x; --y;
         if(validation(x, y)){
             field[y][x]=(turn%2!=0) ? 'O' : 'X';
             ++turn;
@@ -26,7 +26,7 @@ public class TicTacToe {
     }
 
     boolean validation(int x, int y){
-        boolean rez=false;
+        boolean rez;
         if((x < 0 || x > 2) | (y < 0 || y > 2)){
             System.out.println("You have gone beyond the boundaries of the field!");
             rez = false;
