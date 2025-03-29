@@ -30,7 +30,7 @@ public class Discount {
                     else continue;
                 }
             }
-            sum+=Double.valueOf(inp);
+            sum+=Double.parseDouble(inp);
             count++;
         }while(true);
     }
