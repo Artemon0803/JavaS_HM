@@ -34,7 +34,6 @@ public class Voting {
      * Shows results of voting by counting id's in `votes` map
      * for each candidate. Works even when {@code cands} is empty,
      * but won't show anything.
-     *
      * @param cands Candidates object to get id's of
      *              candidates.
      */
