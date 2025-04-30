@@ -47,9 +47,13 @@ public class Voting {
         for(Integer vote : votes.values()) { // Calculates results
             if(results.containsKey(vote)) results.replace(vote, results.get(vote)+1);
         }
-        for(Integer key : results.keySet()) { // Prints results of voting
-            System.out.print("Candidate with id "+key+" has ");
-            System.out.print(results.get(key)+" votes\n");
+        if(!results.isEmpty()) {
+            for(Integer key : results.keySet()) { // Prints results of voting
+                System.out.print("Candidate with id "+key+" has ");
+                System.out.print(results.get(key)+" votes\n");
+            }
+        } else {
+            System.out.println("No votes!");
         }
     }
 }
