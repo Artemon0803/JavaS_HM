@@ -48,14 +48,12 @@ public class Candidates {
     }
 
     private void addCandidate(String name, String part) {
-        Pattern namePattern = Pattern.compile("[A-z]\\w+(_|-)[A-z]\\w+");
-        Pattern partPattern = Pattern.compile("[A-Z]\\w+");
-        Matcher userMatch = namePattern.matcher(name);
-        Matcher partMatch = partPattern.matcher(part);
+        Pattern namePattern = Pattern.compile("[A-Za-z]\\w*(_|-)[A-Za-z]\\w*");
+        Pattern partPattern = Pattern.compile("[A-Z][A-Za-z0-9]\\w*");
 
-        if (!userMatch.find()) {
+        if (!namePattern.matcher(name).matches()) {
             System.out.println("Invalid username format!");
-        } else if (!partMatch.find()) {
+        } else if (!partPattern.matcher(part).matches()) {
             System.out.println("Invalid part format!");
         } else {
             String[] candInfo = {name, part};
@@ -81,8 +79,7 @@ public class Candidates {
         boolean result = false;
         for(String[] info : candidates.values()) {
             if (info[0].equals(candInfo[0])) {
-                result = true;
-                break;
+                return true;
             }
         }
         return result;
@@ -115,19 +112,17 @@ public class Candidates {
     }
 
     public void showCandidates() {
-        try {
-            for(int i = candidates.firstKey(); i <= candidates.lastKey(); i++) {
-                if(candidates.containsKey(i)) {
-                    System.out.print(i+" ");
-                    System.out.println(Arrays.toString(candidates.get(i)));
-                }
-            }
-        } catch (NoSuchElementException e) {
+        if(candidates.isEmpty()){
             System.out.println("There are no candidates!");
+            return;
+        }
+        for(Map.Entry<Integer, String[]> entry : candidates.entrySet()) {
+            System.out.print(entry.getKey() + " ");
+            System.out.println(Arrays.toString(entry.getValue()));
         }
     }
 
-    // Returns set of key for voting system
+    // Returns set of key for a voting system
     public Set<Integer> getKeys() {
         return candidates.keySet();
     }

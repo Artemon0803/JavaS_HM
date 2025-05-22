@@ -3,23 +3,20 @@ package Voting_System;
 import java.util.Objects;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Users {
     private SortedMap<String, String> users = new TreeMap<>();
 
     public boolean addUser(String username, String password) {
-        Pattern usernamePattern = Pattern.compile("[A-z]\\w+(_|-)[A-z]\\w+");
-        Pattern passwordPattern = Pattern.compile("([A-z]|[0-9]){5,30}");
-        Matcher userMatch = usernamePattern.matcher(username);
-        Matcher passMatch = passwordPattern.matcher(password);
+        Pattern usernamePattern = Pattern.compile("[A-Za-z]\\w*(_|-)[A-Za-z]\\w*");
+        Pattern passwordPattern = Pattern.compile("[A-Za-z0-9]{5,30}");
 
         boolean isCreated = false;
 
-        if (!userMatch.find()) {
+        if (!usernamePattern.matcher(username).matches()) {
             System.out.println("Invalid username format!");
-        } else if (!passMatch.find()) {
+        } else if (!passwordPattern.matcher(password).matches()) {
             System.out.println("Invalid password format!");
         } else {
             if(isUserRegistered(username)) {

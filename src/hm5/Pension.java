@@ -14,7 +14,7 @@ public class Pension {
 
         do {
             System.out.println("Enter your gender(M or F): ");
-            gender = scanner.next().charAt(0);
+            gender = Character.toUpperCase(scanner.next().charAt(0));
 
             if (gender == 'M' || gender == 'F') break;
 
@@ -25,7 +25,7 @@ public class Pension {
             System.out.println("Enter your age(0 - 120): ");
             age = scanner.nextInt();
 
-            if(age>=MIN_AGE & age<=MAX_AGE) break;
+            if(age>=MIN_AGE && age<=MAX_AGE) break;
 
             System.out.println("Please enter one of the following options [0 - 120]!");
         } while(true);

@@ -1,7 +1,5 @@
 package Voting_System;
 
-import jdk.jfr.Description;
-
 import java.util.*;
 
 public class Voting {
@@ -22,6 +20,7 @@ public class Voting {
         try {
             System.out.println("Enter id of candidate: ");
             candID = scanner.nextInt();
+            scanner.nextLine();
             if(cands.candidateKeyExists(candID)) {
                 votes.put(username, candID);
             } else System.out.println("There is no candidate with ID "+candID);

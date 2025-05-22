@@ -10,11 +10,12 @@ public class Grade {
         do {
             System.out.println("Enter your score: ");
             score=scanner.nextInt();
+            char result = getGrade(score);
 
-            if(getGrade(score)=='e') {
+            if(result=='e') {
                 System.out.println("Invalid score! Must be: 0 - 100");
             } else {
-                System.out.println("Your grade is: "+getGrade(score));
+                System.out.println("Your grade is: "+result);
                 break;
             }
         } while(true);
@@ -26,7 +27,7 @@ public class Grade {
         else if(score>=80) return 'B';
         else if(score>=70) return 'C';
         else if(score>=60) return 'D';
-        else if(score<60 & score>=0) return 'F';
+        else if(score>=0) return 'F';
         return 'e';
     }
 }

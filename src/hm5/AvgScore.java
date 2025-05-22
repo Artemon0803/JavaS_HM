@@ -23,7 +23,7 @@ public class AvgScore {
         int i=0;
         do{
             students[i]=new Student();
-            System.out.println("Enter grades of student "+i+"\nTo stop enter 111:");
+            System.out.println("Enter grades of student "+(i+1)+"\nTo stop enter 111:");
             int tmp_score;
             do{
                 System.out.print("\nEnter grade(0 - 10):");

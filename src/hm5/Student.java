@@ -8,11 +8,11 @@ public class Student {
     private ArrayList<Integer> grades = new ArrayList<Integer>();
     private float selfAvg;
 
-    void addGrade(int grade){
+    public void addGrade(int grade){
         grades.add(grade);
     }
 
-    float getSelfAvg(){
+    public float getSelfAvg(){
         calcSelfAvg();
         return selfAvg;
     }

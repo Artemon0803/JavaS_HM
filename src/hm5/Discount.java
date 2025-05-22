@@ -21,11 +21,11 @@ public class Discount {
             System.out.println("Price of item "+count+": ");
             inp=scanner.next();
             if(inp.charAt(0)=='q'){
-                if(sum>SUM_FOR_TEN_DISCOUNT){
-                    System.out.printf("Congratulations! You’ve saved %f $", discount(sum));
+                if(sum>=SUM_FOR_TEN_DISCOUNT){
+                    System.out.printf("Congratulations! You’ve saved %.2f $", discount(sum));
                     break;
                 } else {
-                    System.out.printf("Spend %f $ more to get the discount. Do you want to continue?\n(Y or N)", SUM_FOR_TEN_DISCOUNT-sum);
+                    System.out.printf("Spend %.2f $ more to get the discount. Do you want to continue?\n(Y or N)", SUM_FOR_TEN_DISCOUNT-sum);
                     if(scanner.next().charAt(0)=='N') break;
                     else continue;
                 }
@@ -33,5 +33,6 @@ public class Discount {
             sum+=Double.parseDouble(inp);
             count++;
         }while(true);
+        scanner.close();
     }
 }
